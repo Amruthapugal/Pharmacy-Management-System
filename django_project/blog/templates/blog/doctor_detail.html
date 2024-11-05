@@ -1,0 +1,37 @@
+{%extends "blog/base.html"%} 
+{%block content%}
+	<br>
+	<h1>Record of Dr. {{ object.doctor_name }}</h1>
+	<br>
+<!--	<div class="container">
+		<div class="table-responsive"> -->
+			<table class="table table-hover">
+ 			 <thead class="thead-dark">
+	
+			
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Speciality</th>
+					<th>Date Posted</th>
+				</tr>
+				<tr>
+
+					<td>{{object.doctor_id}}</td>
+					<td>{{object.doctor_name}}</td>
+					<td>{{object.speciality}}</td>
+					<td>{{object.date_posted|date:"F d, Y"}}</td>
+				</tr>
+			
+			</table>
+			<hr>
+		<a class="btn btn-secondary mt-1 mb-1 mr-1" href="{%url 'Doctor-update' object.doctor_id%}">Update</a>	
+		<a class="btn btn-danger mt-1 mb-1 mr-5 " href="{%url 'Doctor-delete' object.doctor_id%}">Delete</a>
+
+		</div>
+	</div>
+		
+
+	
+
+{%endblock%}

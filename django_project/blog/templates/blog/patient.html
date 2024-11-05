@@ -1,0 +1,40 @@
+{%extends "blog/base.html"%}
+{%block content%}
+
+<div class="container">
+	<p style="font-size: 26px; font-family: fantasy"> Patient Details </p>
+</div>
+	<a class="btn btn-secondary mt-3" href="{% url 'patient-view'%}">Create New Record</a>
+	<a class="btn btn-primary mt-3" href="{% url 'search'%}">Search Record</a>
+	<a class="btn btn-danger mt-3" href="{% url 'patient-download'%}">Download CSV file</a>
+		
+	<table class="table table-striped table-bordered table-hover table-condensed" style="border-width: 10; margin-top: 2%">
+			<tr style="color: #ff6f61">
+				<th>Patient ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Doctor ID</th>
+				<th>Blood Group</th>
+				<th>Phone</th>
+			</tr>
+		{% for post in posts_p %}
+			<tr>
+				<td><a href="{% url 'patient-detail' post.patient_id%}">{{post.patient_id}}</a></td>
+				<td>{{post.name}}</td>
+				<td>{{post.email}}</td>
+				<td>{{post.doctor}}</td>
+				<td>{{post.blood_group}}</td>
+				<td>{{post.phone}}</td>
+			</tr>
+		{%endfor%}
+			</table>
+
+			{% for page in page_obj.paginator.page_range %}
+			{% if page_obj.number == page %}
+				<a class="btn btn-info mb-4" href=" ?page={{ page }}">{{page}}</a>
+			{% elif page > page_obj.number|add:'-3' and page < page_obj.number|add:'3'%}
+				<a class="btn btn-outline-info mb-4" href="?page={{page}}">{{page}}</a>
+			{% endif %}	
+		{%endfor%} 
+
+{%endblock content%}

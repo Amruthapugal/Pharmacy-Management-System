@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<div class = "content-section w-50" style="text-align: left; margin-left: 25%; border-width: 6px; background-color: #e6e6ff">
+		<form method="post">
+			{% csrf_token %}
+			<fieldset class="form-group">
+                <legend class="border-bottom mb-4">New Sale</legend>
+                	{{ form|crispy }}
+            </fieldset>
+		    	<div class="form-group" style="text-align: center">
+		    		<button class="btn btn-outline-info" type="submit">Submit</button>
+		    	</div>	
+    	</form>
+	</div>
+
+{%endblock content%}

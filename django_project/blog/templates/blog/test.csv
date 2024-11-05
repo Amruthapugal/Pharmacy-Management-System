@@ -1,0 +1,2 @@
+invoice_id, patient, date, grand_total, amount_received
+00569, aniket, 2012-09-04 06:00:00.000000-08:00, 500, 500

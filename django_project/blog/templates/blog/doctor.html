@@ -1,0 +1,30 @@
+{%extends "blog/base.html"%} 
+{%block content%}
+
+	<a class="btn btn-primary mt-5 mb-3" href="{%url 'Doctor-view'%}">Create New Record</a>
+	
+	<table class="table table-striped table-bordered table-hover table-condensed">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Speciality</th>
+			<th>Date Posted</th>
+		</tr>
+		{% for post in posts%}
+		<tr>
+			<td><a class="article-title" href="{%url 'Doctor-detail' post.doctor_id%}">{{post.doctor_id}}</a></td>
+			<td>{{post.doctor_name}}</td>
+			<td>{{post.speciality}}</td>
+			<td>{{post.date_posted|date:"F d, Y"}}</td>
+		</tr>
+		{%endfor%}
+		</table>
+
+		{% for page in page_obj.paginator.page_range %}
+			{% if page_obj.number == page %}
+				<a class="btn btn-success mb-4" href=" ?page={{ page }}">{{page}}</a>
+			{% elif page > page_obj.number|add:'-3' and page < page_obj.number|add:'3'%}
+				<a class="btn btn-outline-success mb-4" href="?page={{page}}">{{page}}</a>
+			{% endif %}	
+		{%endfor%} 
+{%endblock%}

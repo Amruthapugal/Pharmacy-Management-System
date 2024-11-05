@@ -1,0 +1,56 @@
+{% extends "blog/base.html"%}
+{% block content %}
+
+<div class="container">
+	<h1>Search Patient's Information</h1>
+	<form method="post" action="/search/">
+		{% csrf_token %}
+		<div class="form-group" style="margin-left: 30%">
+			<div class="col-lg-5">
+				<input type="text" name="srh" class="form-control" placeholder="Enter name or patient id" style="margin-top: 30%">
+			</div>
+			<label class="col-lg-2">
+				<button type="submit" class="btn btn-danger" style="margin-top: -74%">Search</button>
+			</label>
+		</div>
+	</form>
+
+</div>
+
+<div style="color: blue">
+	{% if sr %}
+		{% for k in sr %}
+			<table border="3px" width="300px" style="padding: 10%; width: 60%; background-color: yellow; margin-left: 20%">
+				<tr>
+					<td>Patient ID</td>
+					<td>{{k.patient_id}}</td>
+				</tr>
+				<tr>
+					<td>Name</td>
+					<td>{{k.name}}</td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td>{{k.email}}</td>
+				</tr>
+				<tr>
+					<td>Phone</td>
+					<td>{{k.phone}}</td>
+				</tr>
+				<tr>
+					<td>Blood Group</td>
+					<td>{{k.blood_group}}</td>
+				</tr>
+				<tr>
+					<td>Doctor ID</td>
+					<td>{{k.doctor_id}}</td>
+				</tr>
+			</table>
+
+
+		{% endfor %}
+	{% endif %}
+</div>
+
+
+{% endblock content%}

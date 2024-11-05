@@ -1,0 +1,8 @@
+doctor_id,doctor_name,speciality,date_posted,author_id
+1,Aniket,Dentist,"2019-04-09 13:42:05",1
+11,Asmit,Health,"2019-04-12 18:11:43.276058",1
+d121,"Rahul More",HealthClinic,"2019-04-13 09:02:38.174538",1
+21,Rahul,HealthClinic,"2019-04-13 09:03:53.877877",1
+16,"Rushabh Bokade",Surgery,"2019-04-13 10:52:18.561187",1
+19,Lokesh,Fever,"2019-04-15 08:01:27.819799",1
+12,kedar,Heartcare,"2019-04-15 17:02:55.564",1

@@ -1,0 +1,37 @@
+{%extends "blog/base.html"%} 
+{%block content%}
+
+	<a class="btn btn-success mt-5 mb-3" href="{%url 'medicine-view'%}">Create New Record</a>
+	<a class="btn btn-warning mt-5 mb-3" href="{% url 'search-medicine'%}">Search Medicine</a>
+		<table class="table-bordered" cellpadding="15" style="background-color: white; border-width: 3px; margin-left: 25%">
+			<thead style="background-color: #ebebe0">
+					<th>Medicine ID</th>
+					<th>Name</th>
+					<th>Cost</th>
+					<th>Type</th>
+					<th>Action</th>
+			</thead> 
+			{%for post in posts_m%} 
+			<tr>
+				<td>{{post.medicine_id}}</td>
+				<td>{{post.medicine_name}}</td>
+				<td>{{post.cost}}</td>
+				<td>{{post.medicine_type}}</td>
+				<td><a class="btn btn-danger" href="{%url 'medicine-delete' post.medicine_id%}">Delete</a></td>
+			</tr>
+			{%endfor%}
+
+		</table>
+
+		{% for page in page_obj.paginator.page_range %}
+			{% if page_obj.number == page %}
+				<a class="btn btn-info mb-3" href=" ?page={{ page }}">{{page}}</a>
+			{% elif page > page_obj.number|add:'-3' and page < page_obj.number|add:'3'%}
+				<a class="btn btn-outline-info mb-3" href="?page={{page}}">{{page}}</a>
+			{% endif %}	
+		{%endfor%}  
+			
+
+{%endblock%}
+
+					

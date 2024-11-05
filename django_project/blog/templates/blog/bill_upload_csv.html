@@ -1,0 +1,15 @@
+
+{% extends "blog/base.html" %}
+{% block content %}
+
+	{{order}}
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<label>Upload a file</label>
+		<input type="file" name="file">
+		<p>Only Accepts CSV file</p>
+		<button type="submit" value="submit">Upload</button>
+	</form>	
+	
+
+{% endblock content %}

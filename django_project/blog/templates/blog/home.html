@@ -1,0 +1,77 @@
+{%extends "blog/base.html"%} 
+{%block content%}
+	<link href='https://fonts.googleapis.com/css?family=Arbutus Slab' rel='stylesheet'>
+	 
+		<marquee direction="right" style = "size: 25px"><b>Welcome to Pharmacy Store Management Homepage </b></marquee>
+
+<!--	<p style="font-size: 26px"> Welcome to Home Page </p> -->
+	<img src="https://png.pngtree.com/thumb_back/fh260/back_pic/05/06/19/51596c54aa4f63a.jpg" style="margin-right: 10px; height: 180px; width: 1000px" vspace="30">
+<div class="row">
+	<div class="column">
+		<div class="polaroid">
+			<a href="{%url 'medicine'%}">
+				<img src="https://pngimage.net/wp-content/uploads/2018/05/drug-logo-png.png"
+				style="width:90%; margin-top: 10px" alt="medicines">
+				<div class="container">
+					<p><b>Medicines</b></p>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="column">
+		<div class="polaroid">
+			<a href="{% url 'health' %}">
+				<img src="https://d2y2l77dht9e8d.cloudfront.net/web-assets/dist/d2b418d75e3151685d4cd9f160756757.png"
+				style="width:90%" alt="HealthCare">
+				<div class="container">
+					<p><b>Health Care </b></p>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="w-75 p-3">
+			<h4 style="margin-left: -122%; margin-top: 30px; font-size: 40px">Health Care</h4>
+			<p style="margin-left: -21%">Health care or healthcare is the maintenance or improvement of health via the prevention, diagnosis, and treatment of disease, illness, injury, and other physical and mental impairments in people</p>
+			<div class="border">
+					<h3>Health Lifecycle</h3>
+					<img src="https://www.myhealthcareindia.com/files/Good-health.png" style="width: 50%" style="margin-left: -20px">
+				</div>
+					
+			
+		</div>
+			<div class="w-25 p-2" style="margin-top: 80px">
+				<h1>Tips : </h1>
+					<p>1.Exercise and Sports</p>
+					<p>2.Healthy Diet</p>
+					<p>3.Regular Physical Exams</p>
+					<p>4.Weight Loss</p>
+					<p>5.Less Stress</p>
+				
+		</div>
+	</div>
+</div>
+
+{%endblock%}
+
+<!-- <div class="col-sm-8">
+			<img src="https://d2y2l77dht9e8d.cloudfront.net/web-assets/dist/d2b418d75e3151685d4cd9f160756757.png" class="rounded">
+			<p style="margin-top: 10px">HealthCare Products</p>
+		</div> -->
+
+<!-- <div class="container-fluid text-center" style="margin-left: 13%">
+	<div class="row slideanim">
+		<span class="border">
+		<div class="col-sm-5">
+			<a href="{%url 'medicine'%}">
+			<img src="https://pngimage.net/wp-content/uploads/2018/05/drug-logo-png.png" style="width: 130px; height: 130px; margin-right: 50%">
+			<p style="margin-right: 52%; margin-top: 10px">Medicine Details</p>
+		</a>
+		</div>
+	</span>
+
+	</div>
+</div> -->

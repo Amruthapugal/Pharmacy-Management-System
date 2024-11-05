@@ -1,0 +1,43 @@
+{% extends "blog/base.html"%}
+{%block content%}
+	<div class="container">
+	 <a href="{% url 'bill-create' %}" class="btn btn-info btn-lg mb-3">
+          <span class="glyphicon glyphicon-plus-sign"></span> Add New Patient +
+       </a>
+        <a href="{% url 'download-summary' %}" class="btn btn-success btn-lg mb-3">
+                Download Summary</a>
+     </div>
+		<table class="table-bordered" cellpadding="15" style="background-color: white; border-width: 3px; margin-left: 8%">
+			<thead style="background-color: #ebebe0">
+				<th>Invoice Id</th>
+				<th>Patient</th>
+				<th>Date</th>
+				<th>Grand Total</th>
+				<th>Amount Received</th>
+				<th>Options</th>
+			</thead> 
+			{%for post in posts_b%} 
+			<tr>
+				<td>{{post.invoice_id}}</td>
+				<td>{{post.patient}}</td>
+				<td>{{post.date}}</td>
+				<td>{{post.grand_total}}</td>
+				<td>{{post.amount_received}}</td>
+				<td>
+					<a class="btn btn-secondary mt-1 mb-1" href="{% url 'bill-update' post.invoice_id%}">Update</a><br>
+					<a class="btn btn-danger mt-1 mb-1" href="{% url 'bill-delete' post.invoice_id %}">Delete</a>
+				</td>
+
+			</tr>
+			{%endfor%}
+
+		</table>
+
+		{% for page in page_obj.paginator.page_range %}
+			{% if page_obj.number == page %}
+				<a class="btn btn-info mb-4" href=" ?page={{ page }}">{{page}}</a>
+			{% elif page > page_obj.number|add:'-3' and page < page_obj.number|add:'3'%}
+				<a class="btn btn-outline-info mb-4" href="?page={{page}}">{{page}}</a>
+			{% endif %}	
+		{%endfor%} 
+{%endblock content%}

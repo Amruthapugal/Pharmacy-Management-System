@@ -1,0 +1,37 @@
+{% extends "blog/base.html"%}
+{%block content%}
+	<div class="container">
+	 <a href="{% url 'employee-view' %}" class="btn btn-info btn-lg mb-3">
+          <span class="glyphicon glyphicon-plus-sign"></span> Add New Employee
+       </a>
+       <!-- <a href="{% url 'download-summary' %}" class="btn btn-success btn-lg mb-3">
+                Download Summary</a> -->
+     </div>
+		<table class="table-bordered" cellpadding="15" style="background-color: white; border-width: 3px">
+			<thead style="background-color: #ebebe0">
+				<th>Employee Id</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Hire Date</th>
+				<th>Salary</th>
+				<th>Phone</th>
+				<th>Options</th>
+			</thead> 
+			{%for post in posts_emp%} 
+			<tr>
+				<td>{{post.employee_id}}</td>
+				<td>{{post.employee_name}}</td>
+				<td>{{post.email}}</td>
+				<td>{{post.hire_date}}</td>
+				<td>{{post.salary}}</td>
+				<td>{{post.phone}}</td>
+				<td>
+					<a class="btn btn-secondary mt-1 mb-1" href="{% url 'employee-update' post.employee_id%}">Update</a><br>
+	
+				</td>
+
+			</tr>
+			{%endfor%}
+
+		</table>
+{%endblock content%}

@@ -1,0 +1,37 @@
+{%extends "blog/base.html"%} 
+{%block content%}
+	<br>
+	<h1>Sale Details of {{object.invoice_id}}</h1>
+	<br>
+<!--	<div class="container">
+		<div class="table-responsive"> -->
+			<table class="table table-hover">
+ 			 <thead class="thead-dark">
+ 			 	<tr>
+					<th>Patient ID</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Doctor ID</th>
+					<th>Blood Group</th>
+					<th>Phone</th>
+				<tr>
+				<tr>	
+					<td>{{object.patient_id}}</td>
+					<td>{{object.name}}</td>
+					<td>{{object.email}}</td>
+					<td>{{object.doctor}}</td>
+					<td>{{object.blood_group}}</td>
+					<td>{{object.phone}}</td>
+				</tr>
+			
+			</table>
+			<hr>
+			<a class="btn btn-secondary mt-1 mb-1 mr-1" href="{%url 'patient-update' object.patient_id%}">Update</a>	
+			<a class="btn btn-danger mt-1 mb-1 mr-1" href="{% url 'patient-delete' object.patient_id%}">Delete</a>
+
+	
+		
+
+	
+
+{%endblock%}

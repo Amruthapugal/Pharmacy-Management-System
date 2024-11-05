@@ -1,0 +1,60 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<div class = "content-section w-50" style="margin-left: 25%; background-color: #ccc; border-radius: 20px; text-align: left">
+		<form method="post">
+			{% csrf_token %}
+			<fieldset class="form-group">
+                <legend class="border-bottom mb-4">Register to Pharmacy Store</legend>
+
+
+
+		<!--	<fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend> -->
+               		 {{ form|crispy }}
+<!--			<div class="form-group">
+				<label for="name">Name:</label>
+					<input type="name" class="form-control" id="name" placeholder="Enter Name" name="name">
+				
+
+			</div>
+                
+			<div class="form-group">
+      			<label for="email">Email:</label>
+     				 <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    		</div>
+    		<div class="form-group">
+      			<label for="pwd">Password:</label>
+      				<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+   			 </div>
+   			 <div class="checkbox">
+     				 <label><input type="checkbox" name="remember"> Remember me</label>
+    		</div>  -->
+    	</fieldset>
+    	<div class="form-group" style="text-align: center">
+    		<button class="btn btn-outline-info" type="submit">Sign Up</button>
+    	</div>
+
+
+
+
+
+	<!--		<fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+               		 {{ form.as_p }}
+            </fieldset>
+            <div class="form-group">
+            	<button class="btn btn-outline-info" type="submit" >Sign Up</button>
+            </div> -->
+
+		</form>
+		 <div class="border-top pt-3" style="text-align: center">
+            <small class="text-muted">
+               <b> Already Have An Account? </b><a class="ml-2" href="{%url 'login'%}">Sign In</a>
+            </small>
+        </div>
+			
+
+	</div>
+
+{%endblock content%}

@@ -1,0 +1,66 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<body background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN3n9f0CKwfUnIfN3sUD-caoOZUnUo1ovDlgOk2lt6F5LR6MNDTw">
+
+	<div class = "content-section mt-5 w-50" style="margin-left: 30%; background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaetXJ4Cqp4dl3ORzKnEItJZH2Wc4XZlp4x8Std_x3VNTC5y6I); border-radius: 20px; text-align: left ">
+		<form method="post">
+			{% csrf_token %}
+			<fieldset class="form-group " style="margin-top: 10px">
+    <!--    <div class="w-25 p-3" style="background-color: #eee; text-align: left"> -->
+                <legend class="border-bottom mb-4" style="text-align: center">Log In</legend>
+
+
+
+		<!--	<fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend> -->
+               		 {{ form|crispy }}
+<!--			<div class="form-group">
+				<label for="name">Name:</label>
+					<input type="name" class="form-control" id="name" placeholder="Enter Name" name="name">
+				
+
+			</div>
+                
+			<div class="form-group">
+      			<label for="email">Email:</label>
+     				 <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    		</div>
+    		<div class="form-group">
+      			<label for="pwd">Password:</label>
+      				<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+   			 </div>
+   			 <div class="checkbox">
+     				 <label><input type="checkbox" name="remember"> Remember me</label>
+    		</div>  -->
+     
+    	</fieldset>
+    	<div class="form-group" style="text-align: center">
+    		<button class="btn btn-primary" type="submit">Login</button>
+    	</div>
+
+
+
+
+
+	<!--		<fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+               		 {{ form.as_p }}
+            </fieldset>
+            <div class="form-group">
+            	<button class="btn btn-outline-info" type="submit" >Sign Up</button>
+            </div> -->
+
+		</form>
+		 <div class="border-top pt-3" style="text-align: right">
+            <small class="text-muted">
+                <b>Need An Account? </b><a class="ml-2" href="{%url 'registration'%}">Sign Up</a>
+            </small>
+        </div>
+			
+
+	</div>
+
+
+
+{%endblock content%}
